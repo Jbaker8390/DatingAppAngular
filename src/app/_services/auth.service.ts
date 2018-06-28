@@ -14,7 +14,7 @@ login(model: any) {
     return this.http.post(this.baseUrl + 'login', model).map((response: Response) => {
      const user = response.json();
 
-     if(user){
+     if (user) {
          localStorage.setItem('token', user.tokenString);
          this.userToken = user.tokenString;
      }
