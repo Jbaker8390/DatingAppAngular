@@ -9,7 +9,6 @@ import { AuthService } from '../_services/auth.service';
 })
 export class RegisterComponent implements OnInit {
   model: any = {};
-  @Input() valuesFromHome: any;
   @Output() cancelRegister = new EventEmitter();
 
   constructor(private authService: AuthService) { }
@@ -18,7 +17,7 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
-  this.authService.register(this.model).subscribe(()=> {
+  this.authService.register(this.model).subscribe(() => {
     console.log('Registration succesful');
     }, error => {
       console.log(error);
